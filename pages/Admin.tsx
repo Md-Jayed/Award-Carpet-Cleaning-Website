@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useSettings } from '../components/SettingsContext';
+import { useSettings } from '../components/SettingsContext.tsx';
 
 const Admin: React.FC = () => {
   const { settings, updateSettings, resetSettings } = useSettings();
@@ -157,6 +157,28 @@ const Admin: React.FC = () => {
                           onChange={(e) => handleServiceChange(service.id, 'title', e.target.value)}
                           className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 font-bold text-gray-900"
                         />
+                      </div>
+                      <div>
+                        <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Service Image URL</label>
+                        <div className="flex gap-4 items-start">
+                          <input 
+                            type="text"
+                            value={service.img}
+                            onChange={(e) => handleServiceChange(service.id, 'img', e.target.value)}
+                            className="flex-grow bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-medium text-blue-600"
+                            placeholder="https://images.unsplash.com/..."
+                          />
+                          <div className="w-24 h-16 bg-white rounded-lg border border-gray-200 overflow-hidden flex-shrink-0 shadow-sm">
+                            <img 
+                              src={service.img} 
+                              alt="Preview" 
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/150?text=Invalid+URL';
+                              }}
+                            />
+                          </div>
+                        </div>
                       </div>
                       <div>
                         <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Description</label>
