@@ -1,7 +1,7 @@
 
 import React from 'react';
-import QuoteForm from './QuoteForm';
-import { useQuoteModal } from './ModalContext';
+import QuoteForm from './QuoteForm.tsx';
+import { useQuoteModal } from './ModalContext.tsx';
 
 const QuoteModal: React.FC = () => {
   const { isQuoteModalOpen, closeQuoteModal } = useQuoteModal();

@@ -1,17 +1,17 @@
 
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import About from './pages/About';
-import Pricing from './pages/Pricing';
-import Contact from './pages/Contact';
-import Admin from './pages/Admin';
-import { ModalProvider } from './components/ModalContext';
-import { SettingsProvider } from './components/SettingsContext';
-import QuoteModal from './components/QuoteModal';
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import Home from './pages/Home.tsx';
+import Services from './pages/Services.tsx';
+import About from './pages/About.tsx';
+import Pricing from './pages/Pricing.tsx';
+import Contact from './pages/Contact.tsx';
+import Admin from './pages/Admin.tsx';
+import { ModalProvider } from './components/ModalContext.tsx';
+import { SettingsProvider } from './components/SettingsContext.tsx';
+import QuoteModal from './components/QuoteModal.tsx';
 
 const App: React.FC = () => {
   return (
